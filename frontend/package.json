@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "echo \"VUE_APP_API_URL during build is: $VUE_APP_API_URL\" && vue-cli-service build",
     "preview": "vite preview",
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
