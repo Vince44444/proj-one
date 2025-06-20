@@ -6,8 +6,8 @@ import os
 
 app = Flask(__name__)
 app.config.from_object(Config)
-FE_URL = os.environ.get('FE_URL') 
-CORS(app, origins=[FE_URL, "http://localhost:3000", 'http://localhost:5173'])  # Vue dev server ports
+FE_URL = os.environ.get('FE_URL', 'http://localhost:3000') 
+CORS(app, resources={r"/api/*": {"origins": FE_URL}})
 
 db.init_app(app)
 
